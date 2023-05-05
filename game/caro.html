@@ -25,11 +25,11 @@ const b = document.getElementsByClassName("row");
 for (i=0;i<39;i++) 
 	for (j=0;j<39;j++) b[i].innerHTML+='<div class="box"></div>';
 document.getElementById("restart").innerHTML = "Restart " + '<div class="box"></div>';
-document.getElementsByClassName("box")[0].innerHTML = '<img src="file:///C:/Users/DELL/Pictures/replay.png" alt="a" style="width:27px;height:27px;">';
+document.getElementsByClassName("box")[0].innerHTML = '<img src="replay.png" alt="a" style="width:27px;height:27px;">';
 
 const c = document.getElementsByClassName("box");
 for (cnt=1;cnt<=1521;cnt++) c[cnt].setAttribute("id", conv(parseInt((cnt-1)/39))+" "+conv((cnt-1)%39));
-for (cnt=1;cnt<=1521;cnt++) c[cnt].innerHTML='<img src="file:///C:/Users/DELL/Pictures/none.png" alt="a" style="width:27px;height:27px;">';
+for (cnt=1;cnt<=1521;cnt++) c[cnt].innerHTML='<img src="none.png" alt="a" style="width:27px;height:27px;">';
 en = false;
 cnt = 1;
 ch = []
@@ -39,18 +39,18 @@ for (const x of document.getElementsByClassName("box")) {
 	x.addEventListener("click",function () {
 		if (x==c[0]) {
 			cnt = 1; en=false;
-			for (i=1;i<=1521;i++) c[i].innerHTML = '<img src="file:///C:/Users/DELL/Pictures/none.png" alt="a" style="width:27px;height:27px;">';
+			for (i=1;i<=1521;i++) c[i].innerHTML = '<img src="none.png" alt="a" style="width:27px;height:27px;">';
 			for (i=0;i<39;i++) for (j=0;j<39;j++) ch[i][j]=0;
 		}
-		else if (!en && cnt&1 && x.innerHTML!='<img src="file:///C:/Users/DELL/Pictures/x.png" alt="a" style="width:27px;height:27px;">'
-		&& x.innerHTML!='<img src="file:///C:/Users/DELL/Pictures/o.png" alt="a" style="width:27px;height:27px;">') {
-			x.innerHTML='<img src="file:///C:/Users/DELL/Pictures/x.png" alt="a" style="width:27px;height:27px;">'
+		else if (!en && cnt&1 && x.innerHTML!='<img src="x.png" alt="a" style="width:27px;height:27px;">'
+		&& x.innerHTML!='<img src="o.png" alt="a" style="width:27px;height:27px;">') {
+			x.innerHTML='<img src="x.png" alt="a" style="width:27px;height:27px;">'
 			ch[parseInt(x.getAttribute("id").substring(0,2))][parseInt(x.getAttribute("id").substring(3,5))] = 1;
 			cnt++;
 		}
-		else if (!en && x.innerHTML!='<img src="file:///C:/Users/DELL/Pictures/x.png" alt="a" style="width:27px;height:27px;">'
-		&& x.innerHTML!='<img src="file:///C:/Users/DELL/Pictures/o.png" alt="a" style="width:27px;height:27px;">') {
-			x.innerHTML='<img src="file:///C:/Users/DELL/Pictures/o.png" alt="a" style="width:27px;height:27px;">'
+		else if (!en && x.innerHTML!='<img src="x.png" alt="a" style="width:27px;height:27px;">'
+		&& x.innerHTML!='<img src="o.png" alt="a" style="width:27px;height:27px;">') {
+			x.innerHTML='<img src="o.png" alt="a" style="width:27px;height:27px;">'
 			ch[parseInt(x.getAttribute("id").substring(0,2))][parseInt(x.getAttribute("id").substring(3,5))] = 2;
 			cnt++;
 		}
