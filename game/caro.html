@@ -25,7 +25,7 @@ const b = document.getElementsByClassName("row");
 for (i=0;i<39;i++) 
 	for (j=0;j<39;j++) b[i].innerHTML+='<div class="box"></div>';
 document.getElementById("restart").innerHTML = "Restart " + '<div class="box"></div>';
-document.getElementsByClassName("box")[0].innerHTML = '<img src="replay.png" alt="a" style="width:27px;height:27px;">';
+document.getElementsByClassName("box")[0].innerHTML = '<img src="image/replay.png" alt="a" style="width:27px;height:27px;">';
 
 const c = document.getElementsByClassName("box");
 for (cnt=1;cnt<=1521;cnt++) c[cnt].setAttribute("id", conv(parseInt((cnt-1)/39))+" "+conv((cnt-1)%39));
